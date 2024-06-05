@@ -7,7 +7,7 @@ div.wrap {
     background-color: #f4f4f4;
     visibility: hidden;
     opacity: 0;
-    transition: width 0.7s, opacity 0.3s, visibility 1s;
+    transition: width 0.5s, opacity 0.1s, visibility 0.5s;
     &.active {
       width: 13.54%;
       visibility: visible;
