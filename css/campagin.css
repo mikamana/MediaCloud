@@ -248,3 +248,8 @@ div.wrap {
     }
   }
 }
+
+.title_info {
+  & img {
+  }
+}
