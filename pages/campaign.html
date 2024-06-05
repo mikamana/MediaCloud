@@ -3,9 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/campagin.css" />
+    <script type="module" src="../js/campaign.js"></script>
     <title>캠페인 페이지</title>
   </head>
   <body>
-    <div>캠페인 페이지</div>
+    <div class="wrap">
+      <div class="arrow_menu_open_wrap">
+        <span class="arrow_menu_open">
+          <img src="../images/campaign/left_menu.png" alt="네비메뉴" />
+        </span>
+      </div>
+      <div class="sidemenu active">
+        <span class="arrow">
+          <img src="../images/campaign/left_menu.png" alt="네비메뉴" />
+        </span>
+        <div class="logo_wrap">
+          <img src="../images/campaign/logo.png" alt="로고" />
+        </div>
+        <ul class="account_list">
+          <li>
+            <span class="account_name">광고 계정</span>
+            <span class="account_state">운영 상태</span>
+          </li>
+          <li>
+            <span class="account_name">밀버스</span>
+            <span class="account_state">운영중</span>
+          </li>
+        </ul>
+        <nav class="gnb_menu">
+          <ul class="gnb_menu_list">
+            <li>
+              <span>대시보드</span>
+            </li>
+            <li>
+              <span>캠페인</span>
+            </li>
+            <li>
+              <span>보고서</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="advert_wrap">
+        <div class="advert">
+          <div class="target_wrap">
+            <h3 class="text_title">
+              광고 목표
+              <span>
+                <img src="../images/campaign/info.png" alt="추가 정보" />
+              </span>
+            </h3>
+            <div class="select_wrap">
+              <ul class="select_list">
+                <li>노출 최대</li>
+                <li>유입 최대</li>
+                <li>전환 최대</li>
+                <li>직접 선택</li>
+              </ul>
+            </div>
+          </div>
+          <div class="campaign_wrap">
+            <div class="campaign_name">
+              <h3 class="text_title">캠페인 이름</h3>
+              <input type="text" />
+            </div>
+            <div class="campaign_select">
+              <div class="campagin_date">
+                <h3 class="text_title">캠페인 기간</h3>
+                <input type="date" />
+              </div>
+              <div class="campaign_device">
+                <h3 class="text_title">디바이스</h3>
+                <ul class="device_list">
+                  <li>PC</li>
+                  <li>Mobile</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner_wrap">
+          <div class="banner">
+            <ul class="banner_list">
+              <li>
+                <p>
+                  <input type="checkbox" />
+                  <span>PC메인</span>
+                </p>
+                <div></div>
+              </li>
+              <li>
+                <p>
+                  <input type="checkbox" />
+                  <span>PC메인</span>
+                </p>
+                <div></div>
+              </li>
+              <li>
+                <p>
+                  <input type="checkbox" />
+                  <span>PC메인</span>
+                </p>
+                <div></div>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel">
+            <span class="left_btn">
+              <img src="../images/campaign/left.png" alt="왼쪽화살표" />
+            </span>
+            <ul class="carousel_list">
+              <li class="active"></li>
+              <li></li>
+            </ul>
+            <span class="right_btn">
+              <img src="../images/campaign/right.png" alt="오른쪽화살표" />
+            </span>
+          </div>
+        </div>
+        <div class="btn_wrap">
+          <button class="purchase_button">상품 구매하기</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
