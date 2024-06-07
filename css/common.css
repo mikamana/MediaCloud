@@ -5,3 +5,13 @@
   margin-bottom: 15px;
   gap: 6px;
 }
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body,
+html {
+  font-family: "Noto Sans", "Noto Sans KR", sans-serif;
+}

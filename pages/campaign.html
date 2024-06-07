@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/campagin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script type="module" src="../js/campaign.js"></script>
     <title>캠페인 페이지</title>
   </head>
@@ -36,13 +41,13 @@
         <nav class="gnb_menu">
           <ul class="gnb_menu_list">
             <li>
-              <span>대시보드</span>
+              <a href="#">대시보드</a>
             </li>
             <li>
-              <span>캠페인</span>
+              <a href="#">캠페인</a>
             </li>
             <li>
-              <span>보고서</span>
+              <a href="#">보고서</a>
             </li>
           </ul>
         </nav>
@@ -58,17 +63,25 @@
             </h3>
             <div class="select_wrap">
               <ul class="select_list">
-                <li>노출 최대</li>
-                <li>유입 최대</li>
-                <li>전환 최대</li>
-                <li>직접 선택</li>
+                <li>
+                  <button type="button">노출 최대</button>
+                </li>
+                <li>
+                  <button type="button">유입 최대</button>
+                </li>
+                <li>
+                  <button type="button">전환 최대</button>
+                </li>
+                <li>
+                  <button type="button">직접 선택</button>
+                </li>
               </ul>
             </div>
           </div>
           <div class="campaign_wrap">
             <div class="campaign_name">
               <h3 class="text_title">캠페인 이름</h3>
-              <input type="text" />
+              <input class="campaign_name_input" type="text" />
             </div>
             <div class="campaign_select">
               <div class="campagin_date">
@@ -78,8 +91,12 @@
               <div class="campaign_device">
                 <h3 class="text_title">디바이스</h3>
                 <ul class="device_list">
-                  <li>PC</li>
-                  <li>Mobile</li>
+                  <li>
+                    <button type="button">PC</button>
+                  </li>
+                  <li>
+                    <button type="button">Mobile</button>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -90,22 +107,43 @@
             <ul class="banner_list">
               <li>
                 <p>
-                  <input type="checkbox" />
+                  <input type="checkbox" class="checkbox" />
                   <span>PC메인</span>
                 </p>
                 <div></div>
               </li>
               <li>
                 <p>
-                  <input type="checkbox" />
-                  <span>PC메인</span>
+                  <input type="checkbox" class="checkbox" />
+                  <span>PC서브</span>
                 </p>
                 <div></div>
               </li>
               <li>
                 <p>
-                  <input type="checkbox" />
-                  <span>PC메인</span>
+                  <input type="checkbox" class="checkbox" />
+                  <span>PC콘텐츠</span>
+                </p>
+                <div></div>
+              </li>
+              <li>
+                <p>
+                  <input type="checkbox" class="checkbox" />
+                  <span>MO메인</span>
+                </p>
+                <div></div>
+              </li>
+              <li>
+                <p>
+                  <input type="checkbox" class="checkbox" />
+                  <span>MO서브</span>
+                </p>
+                <div></div>
+              </li>
+              <li>
+                <p>
+                  <input type="checkbox" class="checkbox" />
+                  <span>MO콘텐츠</span>
                 </p>
                 <div></div>
               </li>
