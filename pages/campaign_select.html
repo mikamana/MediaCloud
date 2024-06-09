@@ -9,7 +9,7 @@
     />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/campagin.css" />
+    <link rel="stylesheet" href="../css/campagin_select.css" />
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script type="module" src="../js/campaign.js"></script>
     <title>캠페인 페이지</title>
@@ -86,7 +86,58 @@
             <div class="campaign_select">
               <div class="campagin_date">
                 <h3 class="text_title">캠페인 기간</h3>
-                <input type="date" />
+                <div class="date_box">
+                  <span>날짜를 선택해주세요.</span>
+                  <img class="calender_menu" src="../images/campaign/date.png" alt="달력">
+                </div>
+                <div class="calender_box">
+                  <div class="calendar-header">
+                    <button type="button" class="cal_left_btn"><</button>
+                    <div class="month-year">
+                      <!-- <select id="month-select">
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                      </select> -->
+                      <div class="month-select">
+                        ds
+                      </div>
+                      <div class="year-select">
+                        sd
+                      </div>
+<!--                       <select id="year-select">
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                      </select> -->
+                    </div>
+                    <button type="button" class="cal_right_btn">></button>
+                  </div>
+                  <div class="calender-body">
+                    <div class="day_box">
+                      <div class="day-names">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thr</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                      </div>
+                    </div>
+                    <div class="day_list">
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="campaign_device">
                 <h3 class="text_title">디바이스</h3>
@@ -107,42 +158,42 @@
             <ul class="banner_list">
               <li>
                 <p>
-                  <input type="checkbox" class="checkbox" />
+                  <input type="checkbox" class="checkbox" value="PC메인"/>
                   <span>PC메인</span>
                 </p>
                 <div></div>
               </li>
               <li>
                 <p>
-                  <input type="checkbox" class="checkbox" />
+                  <input type="checkbox" class="checkbox" value="PC서브"/>
                   <span>PC서브</span>
                 </p>
                 <div></div>
               </li>
               <li>
                 <p>
-                  <input type="checkbox" class="checkbox" />
+                  <input type="checkbox" class="checkbox" value="PC콘텐츠"/>
                   <span>PC콘텐츠</span>
                 </p>
                 <div></div>
               </li>
               <li>
                 <p>
-                  <input type="checkbox" class="checkbox" />
+                  <input type="checkbox" class="checkbox" value="MO메인"/>
                   <span>MO메인</span>
                 </p>
                 <div></div>
               </li>
               <li>
                 <p>
-                  <input type="checkbox" class="checkbox" />
+                  <input type="checkbox" class="checkbox" value="MO서브"/>
                   <span>MO서브</span>
                 </p>
                 <div></div>
               </li>
               <li>
                 <p>
-                  <input type="checkbox" class="checkbox" />
+                  <input type="checkbox" class="checkbox" value="MO콘텐츠"/>
                   <span>MO콘텐츠</span>
                 </p>
                 <div></div>
