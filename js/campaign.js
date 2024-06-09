@@ -53,7 +53,6 @@ const toggleSidebar = (isOpen) => { // 사이드바를 토글하는 함수
 addEventListener(menuBtn, "click", () => toggleSidebar(false)); // 메뉴 버튼 클릭 시 사이드바 닫기
 addEventListener(menuBtnOpen, "click", () => toggleSidebar(true)); // 메뉴 열기 버튼 클릭 시 사이드바 열기
 
-
 /* 광고 목표 */
 const adList = querySelectorAll(".select_list > li > button"); // 광고 목표 리스트 선택
 let adObject = {}; // 광고 객체 초기화
@@ -250,6 +249,7 @@ addEventListener(calRightBtn, "click", () => { // 오른쪽 버튼 클릭 이벤
     renderCalendar(currentDate); // 캘린더 렌더링
 });
 
+/* 디바이스 */
 const deviceList = querySelectorAll(".device_list > li > button"); // 디바이스 리스트 선택
 const updateAdObjectDevice = (e) => { // 광고 객체의 디바이스 업데이트 함수
     adObject.device = e.target.innerText; // 클릭된 버튼의 텍스트를 광고 객체에 저장
@@ -259,6 +259,7 @@ const updateAdObjectDevice = (e) => { // 광고 객체의 디바이스 업데이
 
 deviceList.forEach((node) => addEventListener(node, "click", updateAdObjectDevice)); // 모든 디바이스 버튼에 클릭 이벤트 추가
 
+/* 배너 */
 const bannerList = querySelectorAll(".banner_list > li"); // 배너 리스트 선택
 const bannerCheck = querySelectorAll(".checkbox"); // 배너 체크박스 선택
 
@@ -273,6 +274,7 @@ const updateBannerSelection = (index) => { // 배너 선택 업데이트 함수
 bannerList.forEach((node, idx) => addEventListener(node, "click", () => updateBannerSelection(idx))); // 모든 배너에 클릭 이벤트 추가
 bannerCheck.forEach((node, idx) => addEventListener(node, "click", () => updateBannerSelection(idx))); // 모든 체크박스에 클릭 이벤트 추가
 
+/* 상품 구매하기 */
 const purchaseBtn = querySelector(".purchase_button"); // 구매 버튼 선택
 addEventListener(purchaseBtn, "click", () => { // 구매 버튼 클릭 이벤트
     const campaignName = querySelector(".campaign_name_input"); // 캠페인 이름 입력란 선택
@@ -280,6 +282,7 @@ addEventListener(purchaseBtn, "click", () => { // 구매 버튼 클릭 이벤트
     console.log(adObject); // 광고 객체 콘솔에 출력
 });
 
+/* 슬라이드 기능 */
 const slideList = querySelector(".banner_list"); // 슬라이드 리스트 선택
 const slideLeftBtn = querySelector(".left_btn"); // 슬라이드 왼쪽 버튼 선택
 const slideRightBtn = querySelector(".right_btn"); // 슬라이드 오른쪽 버튼 선택
@@ -358,6 +361,28 @@ const animation = () => { // 애니메이션 함수
     setSliderPosition(); // 슬라이더 위치 설정
     if (isDragging) requestAnimationFrame(animation); // 드래그 상태인 경우 애니메이션 계속
 };
+
+slideCarousel.forEach((val, idx) => {
+    val.addEventListener("click", () => {
+        currentIndex = idx;
+        fnCarousel(currentIndex);
+        setPositionByIndex();
+    });
+});
+
+addEventListener(slideRightBtn, "click", (e) => {
+
+    currentIndex === 0 ? (currentIndex = 1) : (currentIndex = 0);
+    fnCarousel(currentIndex);
+    setPositionByIndex();
+})
+
+addEventListener(slideLeftBtn, "click", (e) => {
+    currentIndex === 0 ? (currentIndex = 1) : (currentIndex = 0);
+    fnCarousel(currentIndex);
+    setPositionByIndex();
+
+})
 
 addEventListener(slideList, "mousedown", (e) => startDragging(e.pageX)); // 슬라이드 리스트에 마우스다운 이벤트 추가
 addEventListener(slideList, "mouseup", stopDragging); // 슬라이드 리스트에 마우스업 이벤트 추가

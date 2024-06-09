@@ -1,5 +1,3 @@
-
-
 const menuBtn = document.querySelector(".arrow");
 const sideBar = document.querySelector(".sidemenu");
 const menuBtnOpen = document.querySelector(".arrow_menu_open_wrap");
@@ -35,13 +33,13 @@ const calender = document.querySelector(".calender_box");
 const calenderMenu = document.querySelector(".date_box");
 const calenderDataResult = document.querySelector(".date_box > span");
 
-calenderMenu.addEventListener("click", (e)=>{
+calenderMenu.addEventListener("click", (e) => {
 
   const dp = calender.style.display;
 
-  if(dp === ""){
+  if (dp === "") {
     calender.style.display = "block";
-  }else if(calender.style.display === "block"){
+  } else if (calender.style.display === "block") {
     calender.style.display = "";
   }
 
@@ -63,7 +61,7 @@ calenderMenu.addEventListener("click", (e)=>{
 
   기능 구현
 
-*/ 
+*/
 
 // 캘린더 초기화
 let currentDate = new Date();
@@ -91,11 +89,11 @@ let selectedWeeks = []; // 선택된 주를 저장할 배열
 const calLeftBtn = document.querySelector(".cal_left_btn");
 const calRightBtn = document.querySelector(".cal_right_btn");
 
-if(month >= monthArr.indexOf(monthResult)){
+if (month >= monthArr.indexOf(monthResult)) {
 
   calLeftBtn.disabled = true;
 
-}else{
+} else {
 
   calLeftBtn.disabled = false;
 
@@ -105,49 +103,49 @@ if(month >= monthArr.indexOf(monthResult)){
 function handleDayClick(event) {
   const clickedDate = new Date(event.target.dataset.date); // 클릭한 날짜 추출
   if (!startDate || (startDate && endDate)) {
-      // 시작 날짜를 선택하지 않았거나, 이미 시작 및 종료 날짜가 선택된 경우
-      startDate = clickedDate; // 시작 날짜 설정
-      endDate = null; // 종료 날짜 초기화
-      selectedWeeks = []; // 선택된 주 초기화
-      highlightDates(); // 날짜 하이라이트
+    // 시작 날짜를 선택하지 않았거나, 이미 시작 및 종료 날짜가 선택된 경우
+    startDate = clickedDate; // 시작 날짜 설정
+    endDate = null; // 종료 날짜 초기화
+    selectedWeeks = []; // 선택된 주 초기화
+    highlightDates(); // 날짜 하이라이트
   } else {
-      // 시작 날짜가 이미 선택된 경우
-      if (clickedDate < startDate) {
-          // 종료 날짜가 시작 날짜보다 작으면 선택되지 않음
-          return;
-      }
-      endDate = clickedDate; // 종료 날짜 설정
-      if ((endDate - startDate) / (1000 * 60 * 60 * 24) > 6) {
-          // 종료 날짜가 시작 날짜로부터 7일 이상인 경우
-          endDate = new Date(startDate);
-          endDate.setDate(startDate.getDate() + 6); // 종료 날짜를 시작 날짜로부터 7일로 설정
-      }
+    // 시작 날짜가 이미 선택된 경우
+    if (clickedDate < startDate) {
+      // 종료 날짜가 시작 날짜보다 작으면 선택되지 않음
+      return;
+    }
+    endDate = clickedDate; // 종료 날짜 설정
+    if ((endDate - startDate) / (1000 * 60 * 60 * 24) > 6) {
+      // 종료 날짜가 시작 날짜로부터 7일 이상인 경우
+      endDate = new Date(startDate);
+      endDate.setDate(startDate.getDate() + 6); // 종료 날짜를 시작 날짜로부터 7일로 설정
+    }
 
-      // 선택된 주 배열에 추가
-      const selectedWeek = [];
-      for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
-          selectedWeek.push(new Date(d));
-      }
+    // 선택된 주 배열에 추가
+    const selectedWeek = [];
+    for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+      selectedWeek.push(new Date(d));
+    }
 
-      // 선택된 주 문자열로 변환하여 저장
-      const weekString = selectedWeek.map(date => date.toISOString()).join(',');
+    // 선택된 주 문자열로 변환하여 저장
+    const weekString = selectedWeek.map(date => date.toISOString()).join(',');
 
-      // 텍스트 박스에 선택된 날짜 범위 추가
-      const startDateString = startDate.toLocaleDateString('ko-KR', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      });
-      const endDateString = endDate.toLocaleDateString('ko-KR', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      });
-      calenderDataResult.innerHTML = `${startDateString} ~ ${endDateString}`;
+    // 텍스트 박스에 선택된 날짜 범위 추가
+    const startDateString = startDate.toLocaleDateString('ko-KR', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    const endDateString = endDate.toLocaleDateString('ko-KR', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    calenderDataResult.innerHTML = `${startDateString} ~ ${endDateString}`;
 
-      // 새로운 주를 배열에 추가
-      selectedWeeks.push(weekString);
-      highlightDates(); // 날짜 하이라이트
+    // 새로운 주를 배열에 추가
+    selectedWeeks.push(weekString);
+    highlightDates(); // 날짜 하이라이트
 
   }
 
@@ -157,7 +155,7 @@ function handleDayClick(event) {
   highlightWeeks();
 }
 
-const highlightDates = () =>{
+const highlightDates = () => {
 
   const days = dayContainer.children;
 
@@ -168,15 +166,15 @@ const highlightDates = () =>{
   if (startDate) {
     const startDayElement = Array.from(days).find(day => new Date(day.dataset.date).getTime() === startDate.getTime());
     if (startDayElement) {
-        startDayElement.classList.add('start-date'); // 시작 날짜 하이라이트
+      startDayElement.classList.add('start-date'); // 시작 날짜 하이라이트
     }
   }
 
   if (endDate) {
-      const endDayElement = Array.from(days).find(day => new Date(day.dataset.date).getTime() === endDate.getTime());
-      if (endDayElement) {
-          endDayElement.classList.add('end-date'); // 종료 날짜 하이라이트
-      }
+    const endDayElement = Array.from(days).find(day => new Date(day.dataset.date).getTime() === endDate.getTime());
+    if (endDayElement) {
+      endDayElement.classList.add('end-date'); // 종료 날짜 하이라이트
+    }
   }
 
 }
@@ -185,25 +183,25 @@ const highlightDates = () =>{
 function highlightWeeks() {
   const days = dayContainer.children; // 모든 날짜 요소들 가져오기
   for (let day of days) {
-      day.classList.remove('selected-week'); // 모든 날짜 요소에서 하이라이트 클래스 제거
+    day.classList.remove('selected-week'); // 모든 날짜 요소에서 하이라이트 클래스 제거
   }
 
   // 선택된 주에 대해 하이라이트
   selectedWeeks.forEach(weekString => {
-      const weekDates = weekString.split(',').map(dateString => new Date(dateString));
+    const weekDates = weekString.split(',').map(dateString => new Date(dateString));
 
-      weekDates.forEach(date => {
-          for (let i = 0; i < days.length; i++) {
-              const dayDate = new Date(days[i].dataset.date);
-              if (dayDate.getTime() === date.getTime()) {
-                  days[i].classList.add('selected-week'); // 선택된 주에 속하는 날짜에 하이라이트 클래스 추가
-              }
-          }
-      });
+    weekDates.forEach(date => {
+      for (let i = 0; i < days.length; i++) {
+        const dayDate = new Date(days[i].dataset.date);
+        if (dayDate.getTime() === date.getTime()) {
+          days[i].classList.add('selected-week'); // 선택된 주에 속하는 날짜에 하이라이트 클래스 추가
+        }
+      }
+    });
   });
 }
 
-const fnRenderCalender = (date) =>{
+const fnRenderCalender = (date) => {
   const yearInner = date.getFullYear(); // 연도 추출
   const monthInner = date.getMonth(); // 월 추출
   const firstDay = new Date(yearInner, monthInner, 1); // 현재 달의 첫 번째 날
@@ -215,18 +213,18 @@ const fnRenderCalender = (date) =>{
   const prevMonthLastDay = new Date(yearInner, monthInner, 0); // 이전 달의 마지막 날
   const prevMonthDaysToShow = firstDay.getDay(); // 이전 달에서 현재 달 첫 주에 표시할 일 수
   for (let i = prevMonthLastDay.getDate() - prevMonthDaysToShow + 1; i <= prevMonthLastDay.getDate(); i++) {
-      const day = document.createElement('div'); // 새로운 div 요소 생성
-      day.classList.add('prev-month'); // 이전 달 클래스 추가
-      day.innerText = i; // 날짜 숫자 표시
-      const date = new Date(yearInner, monthInner - 1, i); // 해당 날짜 객체 생성
-      const dateString = date.toISOString().split('T')[0]; // 날짜 문자열 형식으로 변환
-      day.dataset.date = date.toISOString(); // 날짜를 data-date 속성에 저장
-      day.addEventListener("click", handleDayClick);
-      dayContainer.appendChild(day); // daysContainer에 추가
+    const day = document.createElement('div'); // 새로운 div 요소 생성
+    day.classList.add('prev-month'); // 이전 달 클래스 추가
+    day.innerText = i; // 날짜 숫자 표시
+    const date = new Date(yearInner, monthInner - 1, i); // 해당 날짜 객체 생성
+    const dateString = date.toISOString().split('T')[0]; // 날짜 문자열 형식으로 변환
+    day.dataset.date = date.toISOString(); // 날짜를 data-date 속성에 저장
+    day.addEventListener("click", handleDayClick);
+    dayContainer.appendChild(day); // daysContainer에 추가
   }
 
   // 현재 달의 일자 표시
-  for(let i = 1; i <= lastDay.getDate(); i++){
+  for (let i = 1; i <= lastDay.getDate(); i++) {
     const day = document.createElement("div");
     day.innerText = i;
     const date = new Date(yearInner, monthInner, i); // 해당 날짜 객체 생성
@@ -239,33 +237,33 @@ const fnRenderCalender = (date) =>{
   // 다음 달의 첫 며칠 표시
   const nextMonthDaysToShow = 6 - lastDay.getDay(); // 다음 달에서 현재 달 마지막 주에 표시할 일 수
   for (let i = 1; i <= nextMonthDaysToShow; i++) {
-      const day = document.createElement('div'); // 새로운 div 요소 생성
-      day.classList.add('next-month'); // 다음 달 클래스 추가
-      day.innerText = i; // 날짜 숫자 표시
-      const date = new Date(yearInner, monthInner + 1, i); // 해당 날짜 객체 생성
-      const dateString = date.toISOString().split('T')[0]; // 날짜 문자열 형식으로 변환
-      day.dataset.date = date.toISOString(); // 날짜를 data-date 속성에 저장
-      day.addEventListener("click", handleDayClick);
-      dayContainer.appendChild(day); // daysContainer에 추가
+    const day = document.createElement('div'); // 새로운 div 요소 생성
+    day.classList.add('next-month'); // 다음 달 클래스 추가
+    day.innerText = i; // 날짜 숫자 표시
+    const date = new Date(yearInner, monthInner + 1, i); // 해당 날짜 객체 생성
+    const dateString = date.toISOString().split('T')[0]; // 날짜 문자열 형식으로 변환
+    day.dataset.date = date.toISOString(); // 날짜를 data-date 속성에 저장
+    day.addEventListener("click", handleDayClick);
+    dayContainer.appendChild(day); // daysContainer에 추가
   }
 
-  
+
 
 }
 
 fnRenderCalender(currentDate);
 
-const fnCalenderBtn = (month,year) =>{
+const fnCalenderBtn = (month, year) => {
 
   monthTitle.innerHTML = monthArr[month];
 
-  if(year !== undefined){
+  if (year !== undefined) {
     yearTitle.innerHTML = yearArr[year];
   }
 
-  if(year === 3 && month === 11){
+  if (year === 3 && month === 11) {
     calRightBtn.disabled = true;
-  }else{
+  } else {
     calRightBtn.disabled = false;
   }
 
@@ -273,22 +271,22 @@ const fnCalenderBtn = (month,year) =>{
 
 
 //왼쪽 버튼
-calLeftBtn.addEventListener("click", (e)=>{
+calLeftBtn.addEventListener("click", (e) => {
 
-  if(currentMonth === 0){
+  if (currentMonth === 0) {
     currentMonth = 12;
-    currentYear --;
+    currentYear--;
   }
 
   currentMonth--;
 
-  if(currentYear === 0 && currentMonth <= month){
+  if (currentYear === 0 && currentMonth <= month) {
     calLeftBtn.disabled = true;
   }
 
-  if(currentYear === 0){
+  if (currentYear === 0) {
     fnCalenderBtn(currentMonth);
-  }else if(currentYear !== 0){
+  } else if (currentYear !== 0) {
     fnCalenderBtn(currentMonth, currentYear);
   }
 
@@ -299,19 +297,19 @@ calLeftBtn.addEventListener("click", (e)=>{
 
 
 // 오른쪽 버튼
-calRightBtn.addEventListener("click", (e)=>{
+calRightBtn.addEventListener("click", (e) => {
 
   currentMonth++;
-  if(currentMonth > month){
+  if (currentMonth > month) {
     calLeftBtn.disabled = false;
   }
 
-  if(currentMonth <= 11){
-    fnCalenderBtn(currentMonth,currentYear);
-  }else if(currentMonth > 11){
+  if (currentMonth <= 11) {
+    fnCalenderBtn(currentMonth, currentYear);
+  } else if (currentMonth > 11) {
     currentMonth = 0;
-    currentYear ++;
-    fnCalenderBtn(currentMonth,currentYear);
+    currentYear++;
+    fnCalenderBtn(currentMonth, currentYear);
   }
 
   currentDate.setMonth(currentMonth);
@@ -395,15 +393,15 @@ const bannerList = document.querySelectorAll(".banner_list > li");
 // 배너 체크박스
 const bannerCheck = document.querySelectorAll(".checkbox");
 
-const fnBannerCheck = (index) =>{
+const fnBannerCheck = (index) => {
 
-  bannerList.forEach((node)=>{
+  bannerList.forEach((node) => {
 
     node.style.border = "1px solid #e4e4e4";
 
   });
 
-  bannerCheck.forEach((node)=>{
+  bannerCheck.forEach((node) => {
 
     node.checked = false
 
@@ -416,19 +414,19 @@ const fnBannerCheck = (index) =>{
 
 };
 
-bannerList.forEach((node,idx)=>{
+bannerList.forEach((node, idx) => {
 
-  node.addEventListener("click", (e)=>{
+  node.addEventListener("click", (e) => {
 
     fnBannerCheck(idx);
-    
+
   });
 
 });
 
-bannerCheck.forEach((node,idx)=>{
+bannerCheck.forEach((node, idx) => {
 
-  node.addEventListener("click", (e)=>{
+  node.addEventListener("click", (e) => {
 
     // adObject.banner = e.target.value
     fnBannerCheck(idx);
@@ -455,6 +453,7 @@ const slideList = document.querySelector(".banner_list");
 const slideLeftBtn = document.querySelector(".left_btn");
 const slideRightBtn = document.querySelector(".right_btn");
 const slideCarousel = document.querySelectorAll(".carousel_list > li");
+
 
 let currentIndex = 0;
 let startX = 0;
@@ -483,30 +482,36 @@ const fnCarousel = (index) => {
   }
 };
 
-const setSliderPosition = () => {
-  slideList.style.transform = `translateX(${currentTranslate}px)`;
-};
 
 const setPositionByIndex = () => {
+  console.log("33");
   const slideWidth = slideList.clientWidth;
   currentTranslate = -currentIndex * (slideWidth + 48);
   prevTranslate = currentTranslate;
   setSliderPosition();
 };
 
+const setSliderPosition = () => {
+  slideList.style.transform = `translateX(${currentTranslate}px)`;
+};
+
+// 왼쪽 버튼 클릭 시 슬라이드 이동
 slideLeftBtn.addEventListener("click", () => {
-  currentIndex =
-    currentIndex === 0 ? slideCarousel.length - 1 : currentIndex - 1;
-  setPositionByIndex();
-  fnCarousel(currentIndex);
+  console.log("#3");
+  currentIndex = currentIndex === 0 ? slideCarousel.length - 1 : currentIndex - 1; // 현재 인덱스가 0이면 마지막 인덱스로, 아니면 인덱스 감소
+  setPositionByIndex(); // 인덱스에 따른 슬라이더 위치 설정
+  fnCarousel(currentIndex); // 캐러셀 업데이트
 });
 
+// 오른쪽 버튼 클릭 시 슬라이드 이동
 slideRightBtn.addEventListener("click", () => {
-  currentIndex =
-    currentIndex === slideCarousel.length - 1 ? 0 : currentIndex + 1;
-  setPositionByIndex();
-  fnCarousel(currentIndex);
+  currentIndex = currentIndex === slideCarousel.length - 1 ? 0 : currentIndex + 1; // 현재 인덱스가 마지막이면 0으로, 아니면 인덱스 증가
+  setPositionByIndex(); // 인덱스에 따른 슬라이더 위치 설정
+  fnCarousel(currentIndex); // 캐러셀 업데이트
 });
+
+
+
 
 const startDragging = (position) => {
   startX = position;
@@ -563,4 +568,3 @@ const animation = () => {
   setSliderPosition();
   if (isDragging) requestAnimationFrame(animation);
 };
-

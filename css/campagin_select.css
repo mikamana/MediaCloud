@@ -377,13 +377,13 @@ input::placeholder {
 }
 
 .start-date {
-  background-color: red; /* 시작 날짜 배경색 */
+  background-color: rgb(177, 216, 104); /* 시작 날짜 배경색 */
   border-radius: 5px;
   color: white; /* 텍스트 색상 */
 }
 
 .end-date {
-  background-color: blue; /* 종료 날짜 배경색 */
+  background-color: rgb(226, 116, 48); /* 종료 날짜 배경색 */
   border-radius: 5px;
   color: white; /* 텍스트 색상 */
 }
