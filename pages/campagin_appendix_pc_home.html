@@ -4,12 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/font.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/campaign_appendix_pc_home.css">
-  <script type="module" src="../js/campagin_appendix.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="../js/campagin_appendix_home.js"></script>
   <title>Appendix</title>
 </head>
 
@@ -83,30 +86,30 @@
         </div>
       </div>
       <div class="slide_box">
-        <div class="banner_wrap">
-          <ul class="banner_list">
-            <li>
+        <div class="banner_wrap swiper mySwiper">
+          <ul class="banner_list swiper-wrapper">
+            <li class="swiper-slide">
               <a href="#;">
                 <img src="../images/appendix/banner1.png" alt="배너1">
                 <p>드비알레 제미니2 무선 이어버드 화이트 사전 예약 중</p>
                 <span>2만원 적립+사은품까지</span>
               </a>
             </li>
-            <li>
+            <li class="swiper-slide slide_personal">
               <a href="#;">
                 <img src="../images/appendix/banner2.png" alt="배너1">
                 <p>드비알레 제미니2 무선 이어버드 화이트 사전 예약 중</p>
                 <span>2만원 적립+사은품까지</span>
               </a>
             </li>
-            <li>
+            <li class="swiper-slide">
               <a href="#;">
                 <img src="../images/appendix/banner3.png" alt="배너1">
                 <p>드비알레 제미니2 무선 이어버드 화이트 사전 예약 중</p>
                 <span>2만원 적립+사은품까지</span>
               </a>
             </li>
-            <li>
+            <li class="swiper-slide">
               <a href="#;">
                 <img src="../images/appendix/banner4.png" alt="배너1">
                 <p>드비알레 제미니2 무선 이어버드 화이트 사전 예약 중</p>
@@ -116,15 +119,15 @@
           </ul>
         </div>
         <div class="button_wrap">
-          <button class="prev">
+          <button class="prev swiper-button-prev">
           </button>
-          <span class="pagenation_span" lang="en"><span>11</span> / 12</span>
-          <div class="next_pause_wrap">
-            <button class="next">
-            </button>
-            <button class="pause"></button>
-          </div>
+          <span class="pagenation_span swiper-pagination" lang="en"><span>11</span> / 12</span>
+          <!-- <div class="next_pause_wrap"> -->
+          <button class="next swiper-button-next">
+          </button>
+          <button class="pause"></button>
         </div>
+        <!-- </div> -->
       </div>
       <div class="event_banner_wrap">
         <a href="#;">
