@@ -1,3 +1,8 @@
+body,
+html {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .text_title {
   display: flex;
   align-items: center;
@@ -11,7 +16,13 @@ a {
   color: #000;
 }
 
-body,
-html {
-  font-family: "Noto Sans", "Noto Sans KR", sans-serif;
+.inner{
+  width:1280px;
+  margin: 0 auto;
 }
+
+:lang(en) {
+  font-family: 'ITCAvantGardePro' !important;
+}
+
+

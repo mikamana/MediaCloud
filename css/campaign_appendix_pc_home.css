@@ -1,0 +1,113 @@
+div.wrap{
+
+  & main.container{
+    padding-bottom: 66px;
+    box-sizing: border-box;
+    & div.category{
+      & .inner{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        box-sizing: border-box;
+        & div.menu_category{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 14px;
+          & img{
+            width:18px;
+            height: 13px;
+          }
+        }
+        & div.cate_tag{
+          margin-top: 10px;
+          & ul.cate_tag_list{
+            display: flex;
+            gap: 8px;
+            & li{
+              & a{
+                padding: 6px;
+                border: 1px solid #e5e5e5;
+                border-radius: 5px;
+                box-sizing: border-box;
+                font-size: 13px;
+                color:#666;
+              }
+            }
+          }
+        }
+      }
+    }
+    & div.slide_box{
+      margin-top: 35px;
+      width: 100%;
+      & div.banner_wrap{
+        position: relative;
+        left:-340px;
+        margin-bottom: 30px;
+        & ul.banner_list{
+          display: flex;
+          gap: 40px;
+          & li{
+            width:620px;
+            & a{
+              display: flex;
+              flex-direction: column;
+              gap:14px;
+              & img{
+              }
+              & p{
+                font-size: 20px;
+                font-weight: bold;
+              }
+              & span{
+                font-size: 14px;
+                color:#777777;
+              }
+            }
+          }
+        }
+      }
+      & div.button_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:15px;
+        margin-bottom: 100px;
+        & button.prev{
+          width:23px;
+          height: 23px;
+          background-image: url("../images/appendix/left.png");
+        }
+        & span.pagenation_span{
+          font-size: 12px;
+          & span{
+           font-weight: bold; 
+          }
+        }
+        & button.next{
+          width:23px;
+          height: 23px;
+          background-image: url("../images/appendix/right.png");
+        }
+        & button.pause{
+          width:23px;
+          height: 23px;
+          background-image: url("../images/appendix/pause.png");
+        }
+      }
+    }
+    & div.event_banner_wrap{
+      & a{
+        display: flex;
+        justify-content: center;
+        & img{
+        }
+      }
+    }
+  }
+}
+
+
+
+
