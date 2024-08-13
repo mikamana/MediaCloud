@@ -44,13 +44,23 @@ div.wrap{
       overflow: hidden;
       & div.banner_wrap{
         position: relative;
-        left:350px;
+        /* left:350px; */
         margin-bottom: 30px;
         & ul.banner_list{
           display: flex;
           /* gap: 40px; */
           & li{
             width:620px;
+            &.slide1{
+              & a{
+                & img{
+                  padding: 20px;
+                  border: 1px solid #ce524c;
+                  background-color: #faeded;
+                  box-sizing: border-box;
+                }
+              }
+            }
             & a{
               display: flex;
               flex-direction: column;
@@ -127,6 +137,10 @@ div.wrap{
         display: flex;
         justify-content: center;
         & img{
+          padding: 20px;
+          border:1px solid #ce524c;
+          background-color: #faeded;
+          box-sizing: border-box;
         }
       }
     }
