@@ -61,6 +61,16 @@ div.wrap{
               }
             }
           }
+          & div.product_banner_personal{
+            & a{
+              & img{
+                padding: 20px;
+                box-sizing: border-box;
+                border: 1px solid #ff5452;
+                background-color: #f5f5f5;
+              }
+            }
+          }
         }
         & div.product_right{
           flex-grow: 1;
