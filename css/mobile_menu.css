@@ -1,10 +1,18 @@
 nav.foot_menu{
-  padding: 2.667vw 0px;
+  position: fixed;
+  width: 1125px;
+  z-index: 2;
+  bottom: 0px;
+  padding: 2.667vw 30px;
   box-sizing: border-box;
   background-color:#fcfcfc;
   box-shadow: 0px 1px 6px 0px rgba(182, 182, 182, 0.75);
   -webkit-box-shadow: 0px 1px 6px 0px rgba(182, 182, 182, 0.75);
   -moz-box-shadow: 0px 1px 6px 0px rgba(182, 182, 182, 0.75);
+  @media screen and (max-width:1125px){
+    padding: 1.667vw 4vw;
+    width: 100%;
+  }
   & ul.menu_list{
     display: flex;
     justify-content: space-between;

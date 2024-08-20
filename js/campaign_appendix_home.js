@@ -5,7 +5,7 @@ var swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   loop: true, // 슬라이드 루프(무한 회전) 활성화/
   autoplay: {
-    delay: 3000, // 3초마다 자동 재생
+    delay: 7000, // 3초마다 자동 재생
     disableOnInteraction: false // 사용자 상호 작용 후에도 자동 재생 유지
   },
   spaceBetween: 40,
@@ -97,3 +97,12 @@ userListLi.forEach((node, index) => {
   });
 
 });
+
+const closeBtn = document.querySelector(".close_btn_wrap");
+const aside = document.querySelector(".aside");
+
+closeBtn.addEventListener("click", (e) => {
+
+  aside.style.display = "none";
+
+})

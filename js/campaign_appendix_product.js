@@ -5,6 +5,7 @@ const userWrap = document.querySelector(".user_wrap");
 const userImg = document.querySelector(".user_img_wrap");
 const userList = document.querySelector(".user_list");
 const userListLi = document.querySelectorAll(".user_list > li");
+const header = document.querySelector(".header");
 
 
 const user = { name: "사용자 A" };

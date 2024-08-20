@@ -69,3 +69,11 @@ userListLi.forEach((node, index) => {
   });
 
 });
+
+const closeBtn = document.querySelector(".close_btn");
+const aside = document.querySelector(".aside");
+closeBtn.addEventListener("click", (e) => {
+
+  aside.style.display = "none";
+
+})

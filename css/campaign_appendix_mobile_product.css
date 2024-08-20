@@ -147,9 +147,9 @@ div.wrap{
     & section.event_banner_wrap{
       display: flex;
       justify-content: center;
-      margin-bottom: 104px;
+      margin-bottom: 304px;
       @media screen and (max-width:1125px){
-        margin-bottom: 9.244vw;
+        margin-bottom: 30.244vw;
       }
       & div.event_banner{
         & a{
