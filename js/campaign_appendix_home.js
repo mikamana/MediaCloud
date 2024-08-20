@@ -87,7 +87,7 @@ userListLi.forEach((node, index) => {
     console.log(e.target.innerText);
 
     if (user.name === "사용자 A") {
-      slide1.src = "../images/appendix/banner2.png"
+      slide1.src = "../images/appendix/banner1.png"
       slide2.src = "../images/appendix/A.png"
     } else if (user.name === "사용자 B") {
       slide1.src = "../images/appendix/banner5.png"
@@ -105,4 +105,6 @@ closeBtn.addEventListener("click", (e) => {
 
   aside.style.display = "none";
 
-})
+});
+
+
